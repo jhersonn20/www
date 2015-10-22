@@ -1,0 +1,10 @@
+serv_line_code,serv_line_desc,p_id,unit_area,area_desc,pip_iso_no,client_dwg_no,tie_in_joints,lb_sb,sheet_no,total_sheets,rev_no,line_no,constn_area,line_class,material,joint_category,spool_no,spool_no1,joint_no,size,bolt_up_support,schedule,joint_type,weld_location,test_pressure,tp_no,tp_type_of_test,tp_f_s,priority_timing,priority_no,tp_priority_no,tp_priority_timing,piping_class,field_desc,iso_lb_sb,remarks1
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,6,1,,XS,F,SHOP,29.4,232-029-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,7,1,,XS,F,SHOP,29.4,232-029-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,8,1,,XS,F,SHOP,29.4,232-029-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,ERECTION,ERECTION,,BU1,,1,150 #,FC,FIELD,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,LB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,232-264C,SB,50,01,0A,"1""-R-99",4C,A,CS,ERECTION,ERECTION,,BU2,,1,150 #,FC,FIELD,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,LB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,1,1,,XS,F,SHOP,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,2,1,,XS,F,SHOP,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,3,1,,XS,F,SHOP,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,
+R,TANKAGE,,232,TANKAGE,R-232-P3,232A2-L-,,SB,50,01,0A,"1""-R-99",4C,A,CS,SPOOL,R-232-4C,01,4,1,,XS,F,SHOP,29.4,232-030-,H,F,,PRE TA-2,,P1,A/G,BROWN,SB,

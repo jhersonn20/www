@@ -1,0 +1,17 @@
+a {text-decoration: none;border-color: none;}
+img {border: none;}
+.signup {filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9c9b9a', endColorstr='#474646');}
+.signup ul {
+	margin: 3px auto;
+}
+.k-upload-button {
+	margin: .8em;
+	position: relative;
+	display: block;
+	float: left;
+}
+ul.k-upload-files {
+	float: left;
+	margin: .8em 0;
+	line-height: 1.4 !important;
+}

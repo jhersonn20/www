@@ -1,0 +1,266 @@
+/*-------------------------------------------Structure-------------------------------------------
+html {
+	background: #f9f9f9;
+}
+body {
+    background: #f9f9f9;
+}
+*/
+/*-------------------------------------------Default Component-------------------------------------------*/
+a {
+    font-weight: normal !important;
+    text-decoration: none;
+}
+
+/*-------------------------------------------Named Component-------------------------------------------*/
+#arccHead {
+    width: 100%;
+    height: 40px;
+    font-weight: bold;
+/*    background: #D9D9D9;*/
+	background-image: none,-webkit-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,-moz-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,-o-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+    border-bottom: #C6C6C6 1px solid;
+    position: fixed;
+    z-index: 1000;
+}
+#mainNav {
+    width: 100%;
+    text-align: center;
+/*    background: #e5e3e3;*/
+	background-image: none,-webkit-linear-gradient(top,#FFFFFF 0,#e5e3e3 100%);
+	background-image: none,-moz-linear-gradient(top,#FFFFFF 0,#e5e3e3 100%);
+	background-image: none,-o-linear-gradient(top,#FFFFFF 0,#e5e3e3 100%);
+	background-image: none,linear-gradient(top,#FFFFFF 0,#e5e3e3 100%);
+    border-bottom: #D9D9D9 1px solid;
+    border-top: #C6C6C6 1px solid;
+    position: fixed;
+    z-index: 1000;
+}
+#arccWrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 610px;
+    padding: 0;
+    margin: 40px 0 30px 0;
+/*    background: url("/assets/images/images.jpg") no-repeat fixed center top rgb(34, 34, 34);
+    background-size: 100% 100%;*/
+    display: inline-block;
+}
+#arccFooter {
+	position:absolute;
+	position:fixed;
+	bottom:0;
+    width: 100%;
+    height: 30px;
+/*    background: #D9D9D9;*/
+	background-image: none,-webkit-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,-moz-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,-o-linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+	background-image: none,linear-gradient(top,#FFFFFF 0,#D9D9D9 100%);
+    border-top: #C6C6C6 1px solid;
+    text-align: center;
+    z-index: 1000;
+}
+#arccFooter span {
+    line-height: 30px;
+    font-weight: bold;
+}
+
+/*-------------------------------------------Classes-------------------------------------------*/
+#main-wrapper {
+	width: 1003px; /*75%;*/
+	height: auto;
+	margin: 30px auto 0 auto;
+	padding: 10px 0;
+}
+#main-wrapper div.wrap-header, .wrap-form ul li, .wrap-formRpt ul li, .windowWrap-form ul li, #window ul li {
+	margin-bottom: 5px;
+}
+.demo-section:last-child, .wrap-form ul li:last-child, .taClass:last-child, .wrap-formRpt ul li:last-child, .windowWrap-form ul li:last-child {
+	margin-bottom: 0 !important;
+}
+.wrap-header label, .windowWrap-header label {
+	margin-right: 10px;				
+}
+.wrap-header input[type="radio"], .windowWrap-header input[type="radio"] {
+	margin-bottom: 10px;
+}
+.wrap-form {
+	height: 236px;
+}
+.wrap-form ul, .windowWrap-form ul {
+	width: 49.5%;
+	float: left;
+	margin-right: 5px;
+}
+.wrap-form ul li ul, .windowWrap-form ul li ul {
+	width: 100%;
+	float: left;
+	margin-right: 5px;
+}
+.title {
+	text-align: right;
+	margin-right: 5px;
+	line-height: 2.2;	
+	display: inline-block;
+}
+.wrap-form ul li label.title, .wrap-formRpt ul li label.title, .windowWrap-form ul li label.title {
+	width: 35%;
+	float: left;
+	text-align: right;
+	margin-right: 5px;
+	line-height: 2.2;
+}
+.wrap-form-big ul li label.title {
+	width: 110px;
+	text-align: right;
+	margin-right: 5px;
+	line-height: 2.2;	
+	display: inline-block;
+}
+.wrap-form-small ul li label.title {
+	width: 30px;
+	text-align: right;
+	margin-right: 5px;
+	line-height: 2.2;	
+	display: inline-block;
+}
+.formRight, #window .formRight, #window .windowFormRight {
+	width: 49.5%;
+	height: 195px;
+	display: block;
+	float: right;
+}
+.buttonLeft, .windowButtonLeft {
+	width: 40%;
+	float: left;
+}
+.buttonRight {
+	text-align: right;
+	height: 25px;
+}
+.buttonRight span, .buttonRight label {
+	line-height: 2.2;
+}
+.taClass {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.taClass label {
+	display: block;
+	padding: 3px;
+	position: absolute;
+	z-index: 1;
+	background: #e2e2e2;
+	border: 1px solid #abadb3;
+	-moz-border-radius: 0 0 4px 0;
+	-webkit-border-radius: 0 0 4px 0;
+	border-radius: 0 0 4px 0;  
+	line-height: 1.2;
+}
+.taClass textarea {
+	width: 100%;
+	height: 88px;
+	position: relative;
+	padding-top: 25px;
+	resize: none;
+	text-indent: 4px;
+}
+.wrap-button, .windowWrap-button {
+	height: 25px;
+}
+/*.wrap-form ul li input[type="text"] {
+	width: 50%;
+}*/
+.wrap-formRpt {
+	display: block;
+	height: auto;
+}
+.wrap-formRpt ul {
+	width: 100%;
+}
+.wrap-formRpt ul li input {
+	width: 63%;
+}
+.short {
+	float: none !important;
+	margin-right: 4px !important;
+	width: auto !important;
+}
+label.chk {
+	width: auto !important;
+}
+#window .windowWrap-form, #window .formRight, #window .windowFormRight {
+	height: 111px;
+}
+.windowWrap-form ul li input[type="text"] {
+	width: 50%;
+}
+#window ul li label.title {
+	width: 28%;
+	text-align: right;
+	margin-right: 5px;
+	display: inline-block;
+}
+#window .taClass textarea {
+	width: 100%;
+	height: 24px;
+	position: relative;
+	padding-top: 25px;				
+}
+.wrap-buttonUpl, .windowWrap-buttonUpl {
+	margin-top: 5px;
+}
+#window, #uplWindow, #preload {
+	display: none;
+	overflow: hidden !important;
+}
+
+/*-------------------------------------------Kendo-------------------------------------------*/
+.k-dropzone {
+	width: 190px;
+	height: 25px;
+	float: left;
+}
+.k-dropzone em {
+	visibility: visible;
+}
+.k-upload-button {
+	width: 100px;
+}
+.k-upload-files {
+	width: 508px;
+	float: left;
+	margin: .8em 0 .8em 0;
+	line-height: 1.4 !important;
+}
+.k-upload {
+	height: 45px;
+}
+.k-upload-selected {
+	float: right;
+	margin: .8em;
+}
+.k-upload-status {
+	top: 0;
+}
+.k-upload-status-total {
+	display: none;
+}
+input.k-textbox {
+	width: 100%;
+	height: 25px !important;
+	line-height: 2em;
+}
+
+/*----------Menu----------*/
+#jMenu li {
+	width: 180px !important;
+}
+/*
+#window .wrap-form {
+	height: 114px;
+}*/

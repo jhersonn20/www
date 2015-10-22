@@ -1,0 +1,15 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2015-09-08 05:21:24 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:24 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:24 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:25 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:28 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:21:35 --> Severity: Notice  --> Undefined index: userName C:\wamp\www\CodeIgniter\application\views\portal\tmpl_changePassword.php 4
+ERROR - 2015-09-08 05:21:35 --> Severity: Notice  --> Undefined index: id C:\wamp\www\CodeIgniter\application\views\portal\tmpl_changePassword.php 60
+ERROR - 2015-09-08 05:21:54 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:22:51 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2015-09-08 05:22:58 --> Severity: 8192  --> mysql_pconnect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91

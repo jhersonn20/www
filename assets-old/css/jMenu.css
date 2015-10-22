@@ -1,0 +1,81 @@
+
+#jMenu {
+	display:table;
+	margin:0;
+	padding:0;
+	z-index: 1000 !important;
+}
+
+/********************/
+/** premier niveau **/
+/********************/
+#jMenu li {
+	display:table-cell;
+/*    background: #e5e3e3;*/
+	background-image: none,-webkit-linear-gradient(top,#FFFFFF 0,#e5e3e3 100%);
+	margin:0;
+	z-index: 1000 !important;
+}
+	#jMenu li a, #jMenu li span {
+		padding:5px;
+		display:block;
+		background-color: transparent;
+		color: #333;
+		text-transform:uppercase;
+		cursor:pointer;
+		font-size:10px;
+	z-index: 1000 !important;
+	}
+	
+/*******************/
+/** second niveau **/
+/*******************/
+#jMenu li:hover,
+#jMenu li ul li:hover {
+	color: #e0078c;
+	text-decoration: none;
+	z-index: 1000 !important;
+}
+
+#jMenu li ul {
+	display:none;
+	position:absolute;
+	padding:0;
+	margin:0;
+	z-index: 1000 !important;
+}
+	#jMenu li ul li {
+		background: #e5e3e3;
+		border-bottom: #D9D9D9 1px solid;
+		display:block;
+		border-bottom:1px solid #C6C6C6;
+		padding:0;
+		z-index: 1000 !important;
+	}
+	#jMenu li ul li.arrow {
+		background:#e5e3e3 url('/assets/images/arrow_down.png') no-repeat center center;
+		height:6px;
+		padding:0;
+		border-bottom:none;
+		padding-bottom:5px;
+		z-index: 1000 !important;
+	}
+		#jMenu li ul li a, #jMenu li ul li span {
+			font-size:11px;
+			text-transform:none;
+			padding:5px;
+			display:block;
+			border-top:1px solid transparent;
+			border-bottom:1px solid transparent;
+			text-align: center;
+			z-index: 1000 !important;
+		}
+		#jMenu li ul li a.isParent, #jMenu li ul li span.isParent {
+			background:#D9D9D9 url('/assets/images/arrow_right.png') no-repeat right center;
+		}
+			#jMenu li ul li a:hover, #jMenu li ul li span:hover {
+				background-color:#D9D9D9;
+				border-top:1px solid #e5e3e3;
+				border-bottom:1px solid #e5e3e3;
+				z-index: 1000 !important;
+			}

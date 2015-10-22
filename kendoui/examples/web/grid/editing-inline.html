@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inline editing</title>
+
+    <link href="../../content/shared/styles/examples-offline.css" rel="stylesheet">
+    <link href="../../../styles/kendo.common.min.css" rel="stylesheet">
+    <link href="../../../styles/kendo.default.min.css" rel="stylesheet">
+
+    <script src="../../../js/jquery.min19.js"></script>
+    <script src="../../../js/kendo.all.min.js"></script>
+    <script src="../../content/shared/js/console.js"></script>
+        <script type="text/javascript" src="/assets/js/jMenu.js"></script>
+		<script type="text/javascript" src="/assets/js/jquery.csv.js"></script>
+		
+        <script type="text/javascript" src="/assets/js/events.js"></script>
+        <script type="text/javascript" src="/assets/js/function.js"></script>
+		<script type="text/javascript" src="/assets/js/jquery.pnotify.js"></script>
+        <script type="text/javascript" src="/assets/js/jQuery.browser.min.js"></script>
+    <script>
+        
+    </script>
+    
+    
+</head>
+<body>
+    
+        <a class="offline-button" href="../index.html">Back</a>
+    
+            <div id="example" class="k-content">
+            <div id="grid"></div>
+
+            <script>
+                $(document).ready(function () {
+                    //var crudServiceBaseUrl = "http://demos.kendoui.com/service",
+                    var crudServiceBaseUrl = "http://localhost/aptana/slide",
+                        dataSource = new kendo.data.DataSource({
+                            transport: {
+                                read:  {
+                                    //url: crudServiceBaseUrl + "/Products",
+                                    url: crudServiceBaseUrl + "/slideDB.php"
+                                    //,
+                                    //dataType: "jsonp"
+                                },
+                                update: {
+                                    //url: crudServiceBaseUrl + "/Products/Update",
+                                    url: crudServiceBaseUrl + "/slideDB.php",
+                                    //dataType: "jsonp",
+                                    type: "POST"
+                                }
+                                //,
+                                //destroy: {
+                                //    url: crudServiceBaseUrl + "/Products/Destroy",
+                                //    dataType: "jsonp"
+                                //},
+                                //create: {
+                                //    url: crudServiceBaseUrl + "/Products/Create",
+                                //    dataType: "jsonp"
+                                //},
+                                //parameterMap: function(options, operation) {
+                                //    if (operation !== "read" && options.models) {
+                                //        return {models: kendo.stringify(options.models)};
+                                //    }
+                                //}
+                            },
+					        error: function(e) {
+					            alert(e.responseText);
+					        },
+                            batch: true,
+                            pageSize: 20,
+                            schema: {
+								data: function(data){
+		                            return data.data || [];
+								},
+                                model: {
+                                    //id: "ProductID",
+                                    //fields: {
+                                    //    ProductID: { editable: false, nullable: true },
+                                    //    ProductName: { validation: { required: true } },
+                                    //    UnitPrice: { type: "number", validation: { required: true, min: 1} },
+                                    //    Discontinued: { type: "boolean" },
+                                    //    UnitsInStock: { type: "number", validation: { min: 0, required: true } }
+                                    //}
+                                    id: "gid",
+                                    fields: {
+                                        gid: { editable: false, nullable: true },
+                                        path: { type: "string" },
+                                        page_id: { type: "number", validation: { required: true, min: 1}  },
+                                        fldSort: { type: "number", validation: { min: 0, required: true } },
+                                        description: { type: "string"},
+                                        drawing_no: { type: "string"},
+                                        sheet_no: { type: "string"}
+                                    }
+                                }
+                            }
+                        });
+
+                    $("#grid").kendoGrid({
+                        dataSource: dataSource,
+                        pageable: true,
+                        height: 430,
+                        toolbar: ["create"],
+                        columns: [
+                            { field: "path", title: "Path", width: "100px" }, //, format: "{0:c}"
+                            { field: "description", title:"Description", width: "100px" },
+                            { field: "page_id", width: "100px" },
+                            { field: "fldSort", width: "100px" },
+                            { command: ["update", "destroy"], title: "&nbsp;", width: "172px" }],
+                        editable: "inline"
+                    });
+                });
+            </script>
+        </div>
+
+</body>
+</html>

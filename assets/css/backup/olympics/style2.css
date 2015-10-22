@@ -1,0 +1,339 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	background: #ddd url(/assets/images/bgnoise_lg.png) repeat top left;
+	font-weight: 400;
+	font-size: 15px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+ul {
+	padding: 0 !important;
+	list-style-type: none;
+	display: block;
+}
+li {
+	margin-bottom: 14px;
+	text-align: center;
+}
+#header {
+	width: 100%;
+	height: 109px;
+	margin: 10px 10px 15px 10px !important;
+	line-height: 54px;
+}
+.logo {
+	width: 60%;
+	height: 100%;
+	float: left;
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	font-size: 50px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
+	background: url(/assets/images/olympics/header.png) no-repeat;
+}
+.logo h4 {
+	font-size: 20px;
+}
+.logo span {
+	background: url(/assets/images/olympics/skillsOlympics.png) no-repeat;
+	width: 100px;
+	height: 109px;
+	display: block;
+	float: left;
+	padding-right: 10px;
+}
+.formEl {
+	width: 40%;
+	height: 100%;
+	float: left;
+}
+.formEl label {}
+.selectDiv {
+	width: 50%;
+	height: 40px;
+	overflow: hidden;
+	background: url(/assets/images/olympics/settings.png) no-repeat right #fff;
+	border-radius: 10px;
+	float: right;
+	margin: 50px 30px 0 0;
+}
+.selectDiv select {
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	background: transparent;
+	-webkit-appearance: none;
+	padding: 5px;
+	border: 1px solid #CCC;
+	border-radius: 10px;
+}
+.selectDiv select option {
+	border: 1px solid #CCC;
+}
+#timer, #timegrid, .selectDiv, .groupGridProper {
+	box-shadow: 0 0 0 8px #ddd, 0 1px 1px 8px rgba(255,255,255,0.8);
+}
+#timer {
+	width: 95%;
+	height: 250px;
+	margin: 0 auto 25px;
+	border-radius: 10px;
+}
+.leftPos, #leftNav, #rightNav, .label ul li {
+	float: left;
+}
+.time {
+	width: 92%;
+	height: 100%;
+	background: #3d3d3d;
+	color: #ffffff;
+	border-radius: 10px 0 0 10px;
+	-webkit-box-shadow: inset 0 0 50px #000000;
+	-moz-box-shadow: inset 0 0 50px #000000;
+	box-shadow: inset 0 0 50px #000000;
+	-webkit-transition: box-shadow 0.3s ease-in-out;
+}
+.controller {
+	width: 8%;
+	height: 100%;
+	background: #065004;
+	border-radius: 0 10px 10px 0;
+	-webkit-box-shadow: inset 0 0 50px #000000;
+	-moz-box-shadow: inset 0 0 50px #000000;
+	box-shadow: inset 0 0 50px #000000;
+	-webkit-transition: box-shadow 0.3s ease-in-out;
+}
+.controller ul li span {
+	width: 64px;
+	height: 64px;
+	display: block;
+	margin: 0 auto;
+}
+.play {
+	background: url(/assets/images/olympics/play.png) no-repeat center center;
+	cursor: pointer;
+}
+.play_disabled {
+	background: url(/assets/images/olympics/play_disabled.png) no-repeat;
+}
+.pause {
+	background: url(/assets/images/olympics/pause.png) no-repeat;
+	cursor: pointer;
+}
+.pause_disabled {
+	background: url(/assets/images/olympics/pause_disabled.png) no-repeat;
+}
+.restart {
+	background: url(/assets/images/olympics/restart.png) no-repeat;
+	cursor: pointer;
+}
+.restart_disabled {
+	background: url(/assets/images/olympics/restart_disabled.png) no-repeat;
+}
+.stop {
+	background: url(/assets/images/olympics/stop.png) no-repeat;
+	cursor: pointer;
+}
+.stop_disabled {
+	background: url(/assets/images/olympics/stop_disabled.png) no-repeat;
+}
+.counter {
+	height: 200px;
+	font-family: "Let's go Digital";
+	text-shadow: 3px 3px 3px #745a49; /*rgba(171, 171, 171, 0.7);*/
+	font-size: 190px;
+	text-align: center;
+	line-height: 200px;
+}
+.counter div:nth-child(odd) {
+	width: 22%;
+	height: 100%;
+	float: left;
+}
+.counter div:nth-child(even) {
+	width: 4%;
+	height: 100%;
+	float: left;
+}
+.label {	
+	font-family: "Berlin Sans FB Demi";
+	line-height: 50px;
+	font-size: 25px;
+	color: #c17f05;
+}
+.label ul {
+	margin: 0 auto;
+}
+.label ul li:first-child, .label ul li:last-child {
+	width: 20%;
+}
+.label ul li:first-child {
+	padding-right: 5%;
+}
+.label ul li:last-child {
+	padding-left: 5%;
+}
+.label ul li {
+	text-align: center;
+	width: 25%;
+}
+#tabulation {
+	width: 99.5%;
+	height: 262px;
+	padding-left: 5px;
+}
+.button {
+	width: 30%;
+	height: auto;
+	float: left;
+	margin: 0 25.6% 0 2.2%;
+}
+#groupgrid {
+	width: 8%;
+	height: auto;
+	float: left;
+	margin-right: 1.7%;
+}
+.groupGridProper {
+	width: 102px;
+	height: auto;
+	float: right;
+	border-radius: 10px 10px 5px 5px;
+}
+#timegrid {
+	width: 30.2%;
+	height: auto;
+	float: left;
+	border-radius: 10px 10px 5px 5px;
+}
+#leftNav, #rightNav {
+	width: 35.6%;
+	height: 260px;
+	color: #ffffff;
+	font-size: 25px;
+	z-index: 0;
+}
+#leftNav {
+	/*margin-right: 382px;*/
+	margin-right: 28.6%;
+}
+#leftNav div {
+	width: 23.5%; /*18.5%*/
+	height: 100%;
+	float: left;
+	background: brown;
+	margin-right: 5px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	line-height: 260px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(68, 67, 65, 0.5) inset;
+	border: 1px solid #80AB5D;
+	-webkit-transition: box-shadow 0.3s ease-in-out;
+	cursor: pointer;
+}
+#leftNav div.firstChild:hover, #rightNav div.fourthChild:hover,
+#leftNav div.secondChild:hover, #rightNav div.thirdChild:hover,
+#leftNav div.thirdChild:hover, #rightNav div.secondChild:hover,
+#leftNav div.fourthChild:hover, #rightNav div.firstChild:hover{
+	background: #b26e0c;
+}
+.clicked {
+	background: #b01a0a;
+}
+#leftNav div.firstChild, #rightNav div.fourthChild {
+	background: #268c24;
+}
+#leftNav div.secondChild, #rightNav div.thirdChild {
+	background: #197716;
+}
+#leftNav div.thirdChild, #rightNav div.secondChild {
+	background: #0f640d;
+}
+#leftNav div.fourthChild, #rightNav div.firstChild {
+	background: #065404;
+}
+.currDivTeam {
+	background: #883e0d;
+}
+#rightNav div {
+	width: 23.5%;
+	height: 100%;
+	float: right;
+	background: brown;
+	margin-left: 5px;
+	text-align: center;
+	border-radius: 10px 10px 0 0;
+	line-height: 260px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(68, 67, 65, 0.5) inset;
+	border: 1px solid #80AB5D;
+	-webkit-transition: box-shadow 0.3s ease-in-out;
+	cursor: pointer;
+}
+#leftNav div:last-child{
+	margin-right: 0;
+}
+#leftNavrightNav div:last-child {
+	margin-left: 0;
+}
+#skillsFooter {
+    width: 100%;
+    height: 20px;
+    background: #D9D9D9;
+    border-top: #C6C6C6 1px solid;
+    text-align: center;
+	line-height: 20px;
+	bottom: 0;
+	position: fixed;
+	font-size: 12px;
+}
+.hide {
+	display: none;		
+}
+
+.a_demo_four {
+	cursor: pointer;
+	background-color:#065004;
+	font-family: 'Open Sans', sans-serif;
+	font-size:50px;
+	text-decoration:none;
+	color:#fff;
+	position:relative;
+	padding:10px 20px;
+	padding-right:50px;
+	background-image: linear-gradient(bottom, rgb(8,52,7) 0%, rgb(6,97,3) 100%);
+	border-radius: 15px;
+	box-shadow: inset 0px 1px 0px #2d7d2b, 0px 5px 0px 0px #053103, 0px 10px 5px #999;
+}
+ 
+.a_demo_four:active {
+	top:3px;
+	background-image: linear-gradient(bottom, rgb(8,52,7) 100%, rgb(6,97,3) 0%);
+	box-shadow: inset 0px 1px 0px #2d7d2b, 0px 2px 0px 0px #073906, 0px 5px 3px #999;
+}
+ 
+.a_demo_four::before {
+	background-color:#073906;
+	background-image:url(/assets/images/olympics/down_arrow.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	content:"";
+	width:20px;
+	height:20px;
+	position:absolute;
+	right:15px;
+	top:50%;
+	margin-top:-9px;
+	border-radius: 50%;
+	box-shadow: inset 0px 1px 0px #072906, 0px 1px 0px #40963e;
+}
+ 
+.a_demo_four:active::before {
+	top:50%;
+	margin-top:-12px;
+	box-shadow: inset 0px 1px 0px #40963e, 0px 3px 0px #072906, 0px 6px 3px #113f0f;
+}

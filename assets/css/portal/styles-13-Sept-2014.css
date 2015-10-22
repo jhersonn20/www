@@ -1,0 +1,310 @@
+/*-------------------------------------------Structure-------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+}
+html {
+	background-color: #e2e2e2;
+	background: url("/assets/images/portal/pattern.png") repeat-x;
+}
+body {
+	margin: 0 auto;
+	width: 74.35%;
+	height: 100%;
+	font-family: 'Verdana','Open Sans Condensed','Arial Narrow', serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+}
+h1 {
+	font-family: 'Homizio light';
+	font-size: 15px;
+	display: inline-block;
+}
+/*-------------------------------------------Default Components-------------------------------------------*/
+ul {list-style-type: none;}
+li {
+	line-height: 19px;
+	margin-top: 3px;
+}
+fieldset {padding: 5px;}
+textarea {padding: 5px;}
+legend {
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+/*-------------------------------------------Header-------------------------------------------*/
+#arccHead {
+	width: 100%;
+	height: 132px;
+	overflow: hidden;
+}
+.logoName {	
+	width: 685px;
+	height: 113px;
+	background: url("/assets/images/portal/logoName.png") no-repeat;
+}
+.imageARCC {	
+	width: 318px;
+	height: 165px;
+	background: url("/assets/images/portal/ARCCImage.png") no-repeat;
+	float: right;
+}
+#logDesc li {
+	margin-left: -2px;
+	font-size: 10px;
+	width: 694px;
+}
+#arccMenu {
+	width: 100%;
+	height: 30px;
+	background: url("/assets/images/portal/pattern_menu.png") repeat-x;
+}
+#arccMenu span {		
+	color: #ffffff;
+	line-height: 30px;
+	cursor: default;
+}
+#arccMenu a {
+	float: right;
+	line-height: 30px;
+	text-decoration: none;	
+	color: #fff;
+}
+/*-------------------------------------------Home-------------------------------------------*/
+#arccWrap {
+	width: 100%;
+	height: auto;
+	padding: 5px 0;	
+}
+.latest {
+	width: 60%;
+	height: 298px;
+	border: 1px solid #77797a;
+/*	background-color: #b2b4b5;*/
+	border-radius: 6px;
+	padding: 8px;
+/*	color: #ffffff;*/
+/*	float: left;*/
+}
+.signup {
+	width: 36%;
+	height: 298px;
+/*	border: 1px solid #853504;*/
+	border: 1px solid #474646;
+/*	background-color: #cb5b16;*/
+/*	background-image: none,linear-gradient(to bottom,#f2721c 0,#e15613 100%);*/
+	background-image: none,linear-gradient(to bottom,#9c9b9a 0,#474646 100%);
+	border-radius: 6px;
+	padding: 8px;
+	color: #ffffff;
+	float: right;
+}
+.signup a {
+	text-decoration: underline;
+	color: #fff;
+}
+.signup a:hover, #arccMenu a:hover {
+	text-decoration: none;
+}
+.signup ul {
+	margin: 18px auto;
+}
+.clients {
+	width: 98.2%;
+	height: auto;
+	border: 1px solid #77797a;
+/*	background-color: #b2b4b5;*/
+	border-radius: 6px;
+	padding: 8px;
+	margin-top: 5px;
+/*	color: #ffffff;*/
+}
+.module_footer {
+	text-align: right;
+}
+/*-------------------------------------------Login-------------------------------------------*/
+
+/*-------------------------------------------Footer-------------------------------------------*/
+#footer {
+	width: 100%;
+	height: auto;
+	border-top: 1px solid #ddd;
+	background-color: #e6e5e5;
+	border-radius: 6px 6px 0 0;
+	padding: 8px 0;
+}
+#footer span {
+	display: block;
+	text-align: center;
+	color: #0f73a9;
+}
+
+/*-------------------------------------------Window-------------------------------------------*/
+#window ul li label.title, .k-window ul li label.title {
+	width: 28%;
+	text-align: right;
+	margin-right: 5px;
+	display: inline-block;
+}
+#window ul li, .k-window ul li {
+	margin-bottom: 5px;
+}
+.buttonRight {
+	text-align: right;
+	height: 25px;
+}
+
+/*-------------------------------------------Kendo-------------------------------------------*/
+.demo-section {
+	padding: 5px;
+	margin-bottom: 5px !important;
+    background: #D9D9D9;
+}
+.k-window .demo-section {
+	background: none !important;
+}
+.k-grid-header {
+	padding-right: 0 !important;
+}
+.k-grid-content {
+	overflow-y: hidden !important;
+}
+.k-grid tbody tr{
+    height: 27px;
+}			 
+.k-grid td{
+    white-space: nowrap;
+}
+.k-textbox {
+	width: 100%;
+}
+.k-state-active {
+	border-color: #abadb3 !important;
+	background-color: #e2e2e2 !important;
+}
+.k-state-selected {
+	background-image: none,linear-gradient(to bottom,#0f73a9 0,#0b557d 100%);
+	border-color: #0b557d !important;
+	background-color: #0b557d !important;
+}
+.login.k-content {
+/*	background: #e2e2e2 url("/assets/images/webApps/const.png") no-repeat fixed 45% 280px;*/
+}
+.login.k-state-active:hover {
+/*	background: #e2e2e2 url("/assets/images/webApps/const.png") no-repeat fixed 45% 280px !important;*/
+}
+.login.k-tabstrip {
+	border-style: none;
+	background-color: none;
+/*	background-image: none;*/
+}
+.login.k-content {
+	min-height: 430px;
+}
+.gridTitle {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #C5C5C5;
+	padding: 5px 0;
+	font-size: 12px;
+	font-weight: bold;
+}
+.title {
+	text-align: right;
+	margin-right: 5px;
+	line-height: 2.2;	
+	display: inline-block;
+}
+.client-proper {
+	margin: 5px 7px 5px 0;
+	padding: 8px;
+	width: 47.8%;
+	height: 110px;
+/*	float: left;*/
+	display: inline-block;
+	text-align: center;
+}
+.client-proper:nth-child(n+5){
+	border-top: 3px solid #0f73a9;	
+}
+.client-proper:nth-of-type(even){
+	margin-right: 0;
+}
+.client-proper a {
+	text-decoration: none;
+	font-size: 15px;
+	color: #333;
+}
+.client-proper a:first-child {
+	display: block;
+}
+.k-header, .k-widget, .k-tabstrip-items, .k-grouping-header {
+	background-color: none !important;
+	background-image: none,linear-gradient(to bottom,#ffffff 100%,#ffffff 100%);
+}
+.client_name {
+	font-family: "Homizio Light";
+	font-size: 70px;
+	text-align: center;
+	margin: 0 0 5px 0;
+	color: #0f73a9;
+}
+.k-dropzone {
+	width: 190px;
+	height: 25px;
+	float: left;
+}
+.k-dropzone em {
+	visibility: visible;
+}
+.k-upload-button {
+	width: 100px;
+}
+.k-upload-files {
+	width: 508px;
+	float: left;
+	margin: .8em 0 .8em 0;
+	line-height: 1.4 !important;
+}
+.k-upload {
+	height: 45px;
+}
+.k-upload-selected {
+	float: right;
+	margin: .8em;
+}
+.k-upload-status {
+	top: 0;
+}
+.k-upload-status-total {
+	display: none;
+}
+
+.taClass {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.taClass label {
+	display: block;
+	padding: 3px;
+	position: absolute;
+	z-index: 1;
+	background: #e2e2e2;
+	border: 1px solid #abadb3;
+	-moz-border-radius: 0 0 4px 0;
+	-webkit-border-radius: 0 0 4px 0;
+	border-radius: 0 0 4px 0;  
+	line-height: 1.2;
+}
+.taClass textarea {
+	width: 100%;
+	height: 88px;
+	position: relative;
+	padding-top: 25px;
+	resize: none;
+	text-indent: 4px;
+}

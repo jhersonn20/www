@@ -1,0 +1,12 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2014-09-23 06:21:38 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:24:11 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:24:14 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:24:14 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:59:42 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:59:43 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:59:43 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 06:59:54 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 10:04:33 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91
+ERROR - 2014-09-23 10:05:10 --> Severity: Warning  --> mysql_pconnect() [<a href='function.mysql-pconnect'>function.mysql-pconnect</a>]: MySQL server has gone away E:\www\CodeIgniter\system\database\drivers\mysql\mysql_driver.php 91

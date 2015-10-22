@@ -1,0 +1,55 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2015-04-02 08:18:21 --> Severity: Notice  --> Undefined offset: 0 C:\wamp\www\CodeIgniter\application\controllers\webApps\Index.php 94
+ERROR - 2015-04-02 08:22:31 --> Unable to connect to the database
+ERROR - 2015-04-02 08:22:35 --> Unable to connect to the database
+ERROR - 2015-04-02 08:22:40 --> Unable to connect to the database
+ERROR - 2015-04-02 08:22:43 --> Unable to connect to the database
+ERROR - 2015-04-02 08:23:24 --> Unable to connect to the database
+ERROR - 2015-04-02 08:26:41 --> Unable to connect to the database
+ERROR - 2015-04-02 08:26:43 --> Unable to connect to the database
+ERROR - 2015-04-02 08:26:50 --> Unable to connect to the database
+ERROR - 2015-04-02 08:27:24 --> Unable to connect to the database
+ERROR - 2015-04-02 08:27:39 --> Severity: Notice  --> Undefined offset: 0 C:\wamp\www\CodeIgniter\application\controllers\webApps\Index.php 94
+ERROR - 2015-04-02 08:27:42 --> Unable to connect to the database
+ERROR - 2015-04-02 08:27:46 --> Unable to connect to the database
+ERROR - 2015-04-02 08:32:26 --> Unable to connect to the database
+ERROR - 2015-04-02 08:34:15 --> Unable to connect to the database
+ERROR - 2015-04-02 10:25:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp\www\CodeIgniter\application\controllers\webApps\Index.php 94
+ERROR - 2015-04-02 10:25:36 --> Unable to connect to the database
+ERROR - 2015-04-02 10:25:46 --> Unable to connect to the database
+ERROR - 2015-04-02 10:26:58 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:11 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:17 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:54 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:54 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:55 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:55 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:55 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:55 --> Unable to connect to the database
+ERROR - 2015-04-02 10:27:55 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:21 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:21 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:22 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:22 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:22 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:22 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:22 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:23 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:23 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:23 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:23 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:23 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:24 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:24 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:53 --> Unable to connect to the database
+ERROR - 2015-04-02 10:28:56 --> Unable to connect to the database
+ERROR - 2015-04-02 10:29:41 --> Unable to connect to the database
+ERROR - 2015-04-02 10:29:42 --> Unable to connect to the database
+ERROR - 2015-04-02 10:29:49 --> Unable to connect to the database
+ERROR - 2015-04-02 10:30:34 --> Unable to connect to the database
+ERROR - 2015-04-02 10:33:06 --> Unable to connect to the database
+ERROR - 2015-04-02 10:33:13 --> Unable to connect to the database
+ERROR - 2015-04-02 10:33:36 --> Unable to connect to the database
+ERROR - 2015-04-02 10:35:02 --> Unable to connect to the database
+ERROR - 2015-04-02 10:35:37 --> Unable to connect to the database

@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Material per Priority Register" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="carea_loc" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ioption" class="java.lang.String">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[{call dbo.mpalr_sp($P{carea_loc},$P{ioption})}]]>
+	</queryString>
+	<field name="cAREA_LOCATION" class="java.lang.String"/>
+	<field name="cPRIORITY_NO" class="java.lang.String"/>
+	<field name="cPLANT_NO" class="java.lang.String"/>
+	<field name="cAREA_NO" class="java.lang.String"/>
+	<field name="cDRAWING_NO" class="java.lang.String"/>
+	<field name="cSHEET_NO" class="java.lang.String"/>
+	<field name="cREV_NO" class="java.lang.String"/>
+	<field name="cSPOOL_EM" class="java.lang.String"/>
+	<field name="cCOMMODITY" class="java.lang.String"/>
+	<field name="cSIZE" class="java.lang.String"/>
+	<field name="cDESCRIPTION" class="java.lang.String"/>
+	<field name="cUNIT" class="java.lang.String"/>
+	<field name="nQTY" class="java.lang.String"/>
+	<field name="nLENGTH" class="java.lang.String"/>
+	<field name="nREQUEST_QTY" class="java.lang.String"/>
+	<field name="nMRR_QTY" class="java.lang.String"/>
+	<field name="nISSUED_QTY" class="java.lang.String"/>
+	<field name="cREMARKS" class="java.lang.String"/>
+	<field name="cTITLE" class="java.lang.String"/>
+	<field name="cTITLE2" class="java.lang.String"/>
+	<field name="cJMIF_NO" class="java.lang.String"/>
+	<field name="cJMIF_DATE" class="java.lang.String"/>
+	<field name="cJWRR_NO" class="java.lang.String"/>
+	<field name="cJWRR_DATE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<staticText>
+				<reportElement x="106" y="17" width="199" height="21" forecolor="#0033FF"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL RUSHAID CONSTRUCTION CO., LTD.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="1" width="103" height="38"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arrc-logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="627" y="22" width="175" height="21"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arcc-arabic.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="46" y="102" width="26" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIORITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="72" y="102" width="23" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="95" y="102" width="23" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AREA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="102" width="46" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AREA LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="117" y="102" width="52" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DRAWING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="169" y="102" width="29" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHEET NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="198" y="102" width="26" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REV NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="224" y="102" width="26" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SPL /EM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="250" y="102" width="41" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMMODITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="291" y="102" width="21" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIZE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="312" y="102" width="87" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="399" y="102" width="22" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="421" y="102" width="24" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="445" y="102" width="27" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LENGTH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="472" y="102" width="45" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQUEST NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="517" y="102" width="39" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQ. DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="556" y="102" width="42" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQUEST QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="598" y="102" width="46" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MRR NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="644" y="102" width="38" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MRR DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="682" y="102" width="42" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MRR QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="724" y="102" width="36" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUED QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="760" y="102" width="42" height="11" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REMARKS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="4" y="90" width="476" height="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cTITLE2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="48" width="802" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cTITLE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="396" y="68" width="47" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="9" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="364" y="68" width="32" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="9" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[As of ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="46" y="0" width="26" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPRIORITY_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="72" y="0" width="23" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPLANT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="95" y="0" width="23" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAREA_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="46" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAREA_LOCATION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="117" y="0" width="52" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDRAWING_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="169" y="0" width="29" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cSHEET_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="198" y="0" width="26" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cREV_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="250" y="0" width="41" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cCOMMODITY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="291" y="0" width="21" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cSIZE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="312" y="0" width="87" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDESCRIPTION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="399" y="0" width="22" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cUNIT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="445" y="0" width="27" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nLENGTH}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="472" y="0" width="45" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cJMIF_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="556" y="0" width="42" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nREQUEST_QTY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="598" y="0" width="46" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cJWRR_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="724" y="0" width="36" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nISSUED_QTY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="760" y="0" width="42" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cREMARKS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="224" y="0" width="26" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cSPOOL_EM}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="0" width="38" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cJMIF_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="644" y="0" width="38" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cJWRR_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="682" y="0" width="42" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nMRR_QTY}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="421" y="0" width="22" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nQTY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="680" y="1" width="80" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="760" y="1" width="40" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="1" width="54" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[  Printed date : ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="55" y="1" width="61" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="120" y="1" width="50" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

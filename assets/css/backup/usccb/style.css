@@ -1,0 +1,64 @@
+ul {
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+}
+li {
+	padding: 3px 5px;
+	margin-top: 5px;
+	border: 1px solid #000;
+	background: #efefefe;
+	text-align: center;
+}
+li:first-child {
+	margin-top: 0;	
+}
+li:hover, .current {
+	border: 1px solid #000;
+	color: #fff;
+	background: gray;
+	cursor: pointer;
+}
+.current {
+	cursor: default !important;
+}
+#dateDiv {
+	float: left;
+	width: 10%;
+	height: 100%;
+}
+#contentDiv {
+	float: left;
+	width: 90%;
+	height: 100%;
+	font-family: Georgia, "Times New Roman", Times, serif;	
+}
+#readingTitle {
+	padding: 5px 0;
+	border-bottom: 1px solid gray;
+	font-weight: bold;
+}
+#readingTitle:first-child {
+	border-bottom: none;
+}
+#reading {
+	border-bottom: 1px dashed gray !important;
+	font-size: 14px;
+	padding: 10px 0;
+	margin-bottom: 10px;
+	text-indent: 40px;
+	line-height: 20px;
+}
+#reading:last-child {
+	border-bottom: none !important;
+	margin-bottom: none !important;
+}
+.psalm {
+	text-indent: 0 !important;
+}
+.psalm p:first-child, .psalm p:last-child {
+	display: none;
+}
+p {
+	text-indent:40px;
+}

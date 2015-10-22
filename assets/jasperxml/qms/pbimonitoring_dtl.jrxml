@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pbimonitoring_dtl" language="groovy" pageWidth="1190" pageHeight="842" orientation="Landscape" columnWidth="1150" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a8762d8-6a00-44b7-8d31-84049f49a7d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\wamp\\www\\assets\\jasperxml\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="query" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="user_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select concat("As of ", date_format(current_date,'%M %e, %Y')) as asOf, (select sum(invoice_amt) from projdb.billing_invoice where acctg_confirmed is null) as totalOut]]>
+	</queryString>
+	<field name="asOf" class="java.lang.String"/>
+	<field name="totalOut" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9c532461-30e4-4e44-95d7-047d84c7ffad" x="0" y="0" width="1150" height="14"/>
+				<textElement/>
+				<text><![CDATA[AL RUSHAID CONSTRUCTION CO., LTD.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8408bc54-5198-4479-bcc9-3fd0a9eccd0b" x="0" y="14" width="1150" height="14"/>
+				<textElement/>
+				<text><![CDATA[BILLING AND COLLECTION REPORT]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cb0547d1-c6f6-42b5-bc3e-4978fd074200" x="0" y="28" width="1150" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{asOf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="300">
+			<subreport>
+				<reportElement uuid="87913037-0398-4ca3-ba45-0cff4bfd88bb" x="-19" y="0" width="200" height="100"/>
+				<subreportParameter name="query">
+					<subreportParameterExpression><![CDATA[$P{query}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="user_id">
+					<subreportParameterExpression><![CDATA[$P{user_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\wamp\\www\\assets\\jasperxml\\pbim_dtl_a.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="a016b791-0848-4f31-a06e-895d441e1f99" x="-19" y="200" width="200" height="100"/>
+				<subreportParameter name="query">
+					<subreportParameterExpression><![CDATA[$P{query}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="user_id">
+					<subreportParameterExpression><![CDATA[$P{user_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\wamp\\www\\assets\\jasperxml\\pbim_dtl_b.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="46d17fb3-dccd-4aa9-9840-4f8e407fae0f" x="-19" y="100" width="200" height="100"/>
+				<subreportParameter name="query">
+					<subreportParameterExpression><![CDATA[$P{query}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="user_id">
+					<subreportParameterExpression><![CDATA[$P{user_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["C:\\wamp\\www\\assets\\jasperxml\\pbim_dtl_c.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20">
+			<rectangle>
+				<reportElement uuid="0edfe03b-5036-4f1f-88f3-59785f97e095" x="0" y="0" width="915" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="d8d7f647-f44e-4a93-a205-03cf0c469a27" x="0" y="0" width="701" height="20"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA["TOTAL OUTSTANDING RECEIVABLES"]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;(-#,##0.00)">
+				<reportElement uuid="11a7acf9-28f8-4bc5-987f-494c36a5157b" x="700" y="0" width="99" height="20"/>
+				<box leftPadding="2" rightPadding="2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{totalOut}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

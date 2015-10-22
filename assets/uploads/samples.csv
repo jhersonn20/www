@@ -1,0 +1,4 @@
+errStat,job_no,booklet_no,ogmr_no,requisitioner,trans_date,addressee,description,remarks,dept,file_attach
+Duplicate,1240,0111-5698,0035,RCGomez,12/31/2010,yanbu,glasses,qc passed,mis,0035.pdf
+Not Found,1530,0112-8569,1000,MEVGomez,12/30/2011,yanbu,glasses,qc passed,mis,1000.pdf
+Duplicate,1240,0113-5698,0033,RCGomez,12/29/2009,yanbu,glasses,qc passed,mis,0033.pdf

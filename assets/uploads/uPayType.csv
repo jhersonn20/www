@@ -1,0 +1,8 @@
+pay_type,pay_desc,flg_status
+MB ,Monthly Billing,1
+IC ,Incentive,1
+RT ,Retention,1
+SI ,Site Instruction,1
+CL ,Claims,1
+MS ,Milestone,1
+WO ,Work Order,1

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SPOOL AT WAREHOUSE ISSUED" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cArea" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cSystem" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cSubSys" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cTP" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cBore" class="java.lang.String">
+		<defaultValueExpression><![CDATA["ALL"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cSplType" class="java.lang.String">
+		<defaultValueExpression><![CDATA["<ALL>"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dtAsof" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2015-03-07"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="program_name2" class="java.lang.String">
+		<defaultValueExpression><![CDATA["piprswhse4.w"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[{call piping.dbo.spool_issue_sp($P{cArea},$P{cSystem},$P{cSubSys},$P{cTP},$P{cBore},$P{cSplType},$P{dtAsof},$P{program_name2})}]]>
+	</queryString>
+	<field name="carea_no" class="java.lang.String"/>
+	<field name="cplant_no" class="java.lang.String"/>
+	<field name="cdrawing_no" class="java.lang.String"/>
+	<field name="csheet_no" class="java.lang.String"/>
+	<field name="crev_no" class="java.lang.String"/>
+	<field name="cspool_no" class="java.lang.String"/>
+	<field name="cpriority_code" class="java.lang.String"/>
+	<field name="csystem_no" class="java.lang.String"/>
+	<field name="csub_system" class="java.lang.String"/>
+	<field name="ctestpack_no" class="java.lang.String"/>
+	<field name="cdtAsof" class="java.lang.String"/>
+	<field name="ctitle1" class="java.lang.String"/>
+	<field name="cTitle2" class="java.lang.String"/>
+	<field name="cissue_no" class="java.lang.String"/>
+	<field name="cissued_date" class="java.lang.String"/>
+	<field name="cprogram_name2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="103" height="38"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arrc-logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="109" y="1" width="199" height="21" forecolor="#0033FF"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL RUSHAID CONSTRUCTION CO., LTD.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="108" y="22" width="175" height="21"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arcc-arabic.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="426" y="0" width="139" height="11"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['Program Name :  ' + $P{program_name2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="85" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="2" width="572" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ctitle1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="22" width="572" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['DATE AS OF  '+new SimpleDateFormat("dd-MMM-yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{cdtAsof}.replace( '"', '' )))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="45" width="49" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Priority ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="45" width="31" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Spool    No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="45" width="36" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[System]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="509" y="45" width="64" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Test Pack No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="109" y="45" width="67" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Drawing No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="45" width="51" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[      Date      Issued]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="45" width="29" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sheet No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="45" width="39" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Area]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="45" width="29" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[    Rev.   No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="45" width="30" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="45" width="39" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Plant ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="45" width="70" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issue No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="45" width="38" height="38"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[  Sub   System]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="2" width="30" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="31" y="2" width="39" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{carea_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="70" y="2" width="40" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cplant_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="110" y="2" width="66" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cdrawing_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="176" y="2" width="29" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{csheet_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="205" y="2" width="29" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{crev_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="234" y="2" width="31" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cspool_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="435" y="2" width="36" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{csystem_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="473" y="2" width="36" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{csub_system}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="509" y="2" width="64" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ctestpack_no}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="386" y="2" width="49" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cpriority_code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="265" y="2" width="70" height="10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cissue_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="335" y="2" width="51" height="10"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cissued_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement x="533" y="2" width="39" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="46" y="2" width="40" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="7" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="475" y="2" width="58" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="false" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="422" y="2" width="53" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[  Printed date : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-6" y="2" width="52" height="13"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="7" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

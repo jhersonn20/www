@@ -1,0 +1,4 @@
+loopno,tagno,drawno,sheetno,revno,tagdesc,loc,pid,instype,qty,uom,uprice,cat
+1,32-FT-818,J8DW-P5-B1-0,1,1,1,1,1,SAMPLE UPL,1,SAM1,1,field instrument 1
+2,32-FT-818,J8DW-P5-B1-0,2,2,2,2,2,SAMPLE UPL,2,SAM2,2,field instrument 2
+3,32-FT-818,J8DW-P5-B1-0,3,3,3,3,3,SAMPLE UPL,3,SAM3,3,field instrument 3

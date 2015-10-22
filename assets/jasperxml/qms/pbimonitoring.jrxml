@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pbi_monitoring" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="578900e3-0c5e-4102-8e31-dc6c573ab805">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="user_id" class="java.lang.String">
+		<defaultValueExpression><![CDATA["rcgomez"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="module" class="java.lang.String">
+		<defaultValueExpression><![CDATA["header"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="query" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2013-11-28"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call projdb.sample_projdb($P{query},$P{user_id},$P{module},"x","x")]]>
+	</queryString>
+	<field name="asOf" class="java.lang.String"/>
+	<field name="item" class="java.lang.Integer"/>
+	<field name="job_no" class="java.lang.String"/>
+	<field name="client_name" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="month1_label" class="java.lang.String"/>
+	<field name="month2_label" class="java.lang.String"/>
+	<field name="month3_label" class="java.lang.String"/>
+	<field name="month4_label" class="java.lang.String"/>
+	<field name="month5_label" class="java.lang.String"/>
+	<field name="month6_label" class="java.lang.String"/>
+	<field name="month7_label" class="java.lang.String"/>
+	<field name="month8_label" class="java.lang.String"/>
+	<field name="month9_label" class="java.lang.String"/>
+	<field name="month10_label" class="java.lang.String"/>
+	<field name="month11_label" class="java.lang.String"/>
+	<field name="month12_label" class="java.lang.String"/>
+	<field name="month1" class="java.math.BigDecimal"/>
+	<field name="month2" class="java.math.BigDecimal"/>
+	<field name="month3" class="java.math.BigDecimal"/>
+	<field name="month4" class="java.math.BigDecimal"/>
+	<field name="month5" class="java.math.BigDecimal"/>
+	<field name="month6" class="java.math.BigDecimal"/>
+	<field name="month7" class="java.math.BigDecimal"/>
+	<field name="month8" class="java.math.BigDecimal"/>
+	<field name="month9" class="java.math.BigDecimal"/>
+	<field name="month10" class="java.math.BigDecimal"/>
+	<field name="month11" class="java.math.BigDecimal"/>
+	<field name="month12" class="java.math.BigDecimal"/>
+	<field name="sumTotal" class="java.math.BigDecimal"/>
+	<variable name="total" class="java.lang.Integer" calculation="Sum"/>
+	<variable name="month1_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month1}]]></variableExpression>
+	</variable>
+	<variable name="month2_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month2}]]></variableExpression>
+	</variable>
+	<variable name="month3_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month3}]]></variableExpression>
+	</variable>
+	<variable name="month4_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month4}]]></variableExpression>
+	</variable>
+	<variable name="month5_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month5}]]></variableExpression>
+	</variable>
+	<variable name="month6_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month6}]]></variableExpression>
+	</variable>
+	<variable name="month7_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month7}]]></variableExpression>
+	</variable>
+	<variable name="month8_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month8}]]></variableExpression>
+	</variable>
+	<variable name="month9_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month9}]]></variableExpression>
+	</variable>
+	<variable name="month10_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month10}]]></variableExpression>
+	</variable>
+	<variable name="month11_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month11}]]></variableExpression>
+	</variable>
+	<variable name="month12_1" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{month12}]]></variableExpression>
+	</variable>
+	<variable name="rowTotal" class="java.math.BigDecimal" resetType="Column" incrementType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{month1}.doubleValue() + $F{month2}.doubleValue() + $F{month3}.doubleValue() + $F{month4}.doubleValue() + $F{month5}.doubleValue() + $F{month6}.doubleValue() + $F{month7}.doubleValue() + $F{month8}.doubleValue() + $F{month9}.doubleValue() + $F{month10}.doubleValue() + $F{month11}.doubleValue() + $F{month12}.doubleValue()]]></variableExpression>
+	</variable>
+	<variable name="sumTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="type" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumTotal}]]></variableExpression>
+	</variable>
+	<group name="type" keepTogether="true">
+		<groupExpression><![CDATA[$F{type}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<staticText>
+					<reportElement uuid="1ff132ef-f33f-4092-89c4-134c6fde3c68" x="0" y="20" width="23" height="20"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="false" isItalic="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Item]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="75bc7b0a-4d2c-47a8-867b-d120cadfb183" x="23" y="20" width="34" height="20"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="false" isItalic="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA["Job No."]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="eeb875ca-13b1-423e-9c6d-34e380695bac" x="57" y="20" width="82" height="20"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="false" isItalic="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA[Client]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="f77a6456-b061-4721-ad31-a033652b8122" x="0" y="0" width="802" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" isBold="true" isPdfEmbedded="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="a023b459-dd5d-41d2-9376-51616314d19a" x="751" y="20" width="51" height="20"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="false" isItalic="false" isPdfEmbedded="false"/>
+					</textElement>
+					<text><![CDATA["Total"]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="ae37763e-0438-48c5-b624-23d043508a36" x="139" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month1_label}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false">
+					<reportElement uuid="b59bb973-c160-4226-97c9-60457ec904ad" x="190" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month2_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="968bcab8-566e-4f25-898f-abfc292247d6" x="241" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month3_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="868ed10f-1748-4eac-91e9-2bf49737903a" x="292" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month4_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="315e9a3d-2470-44d6-8525-64b5fae58791" x="343" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month5_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="31c7f36a-dc5a-46ee-be74-1789e1cc481c" x="394" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month6_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1b9ea4a9-01c4-4943-a174-f8f1e7736614" x="445" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month7_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="b289294a-36a4-4424-b16b-a68dfb14d84e" x="496" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month8_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="243e6a58-307c-4d2f-90e9-5b275bb88fa6" x="547" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month9_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="861dbe2e-1b05-4584-be2e-3b10e360ff51" x="598" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month10_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="0d210506-0214-4151-a35b-5b4dcb70c179" x="649" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month11_label}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1b8ea287-bdc1-43f7-8a00-46f1603c899c" x="700" y="20" width="51" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month12_label}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="32">
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="40503427-0089-4cf0-bc3a-15d2c1fd12b3" x="649" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month11_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="eaf2137a-65e9-4c61-82ad-b5c3afcee9ce" x="700" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month12_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="bda0a391-3b5c-40e7-865a-b22b0db5e817" x="139" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month1_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="354e11e3-9583-4dbd-a63a-126793181f0d" x="190" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month2_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="a55e0e52-f7f0-4eec-88be-ea711228f0b5" x="241" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month3_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="bd15dd5a-a1ac-4401-a5a0-89d84fa06aac" x="292" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month4_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="45b13ca1-554e-41d8-b7a6-d6306e224f2e" x="343" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month5_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="e0ad588a-ad96-4d4d-ba2f-409a92b1c074" x="394" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month6_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="506e79e0-1205-40b0-9955-76fc416251b9" x="445" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month7_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="30c4f642-bbde-4d16-a795-9ffd89a0ecfd" x="496" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month8_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="f882a96f-386a-4dd1-a706-bd3773bfc38b" x="547" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month9_1}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0;(-#,##0)">
+					<reportElement uuid="ccef4344-2f12-4e28-b2ca-89cd5af21f24" x="598" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{month10_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="8b6629fa-3b2c-49ca-acde-23e840d3f5cb" x="57" y="0" width="82" height="20"/>
+					<box topPadding="0">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="9" isBold="false" isItalic="false"/>
+					</textElement>
+					<text><![CDATA["Total:"]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="f26b9826-1091-4c07-8fa5-32d8f26236f7" x="751" y="0" width="51" height="20"/>
+					<box rightPadding="2">
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumTotal}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<title>
+		<band height="39" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="881fcd70-7e42-4021-a46e-0052aec1cb4d" x="0" y="0" width="358" height="16"/>
+				<textElement>
+					<font fontName="Calibri" size="12"/>
+				</textElement>
+				<text><![CDATA[PROGRESS BILLING INVOICE MONITORING]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4d852b37-50e7-4886-ae84-b62af82b9eaa" x="0" y="16" width="252" height="15"/>
+				<box topPadding="2" leftPadding="2" rightPadding="2"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{asOf}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d794b834-2889-4818-8fc4-7d829cdcaaac" stretchType="RelativeToTallestObject" x="0" y="0" width="23" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="e7a8b226-342b-442b-a272-7596960adcb1" stretchType="RelativeToTallestObject" x="23" y="0" width="34" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{job_no}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="c4a9613b-d5aa-4434-9766-7ecd2fa63b81" stretchType="RelativeToTallestObject" x="57" y="0" width="82" height="20"/>
+				<box leftPadding="2" rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{client_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="ff089a47-46e7-42ad-af32-2e5528a08b0e" stretchType="RelativeToTallestObject" x="139" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="e7819257-98a9-47ff-afd5-2ece79dbb8d2" stretchType="RelativeToTallestObject" x="190" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="e358fbc8-13af-462d-b0a0-2c0594ca8907" stretchType="RelativeToTallestObject" x="241" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month3}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="5e9cfbce-69a5-497d-98a1-51011e07d99f" stretchType="RelativeToTallestObject" x="292" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month4}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="cacef7a1-aef6-43d1-924b-4feb3b86721b" stretchType="RelativeToTallestObject" x="343" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month5}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="b7d44c81-bb00-4eae-ad19-a74c123f6885" stretchType="RelativeToTallestObject" x="394" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month6}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="3044980c-4a76-49ab-ae59-6e2fd956b81c" stretchType="RelativeToTallestObject" x="445" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month7}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="a3605d45-b39c-477f-838d-d05eae009f71" stretchType="RelativeToTallestObject" x="496" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month8}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="32f61e0c-6ae8-4dd9-a3b5-bd47780bc453" stretchType="RelativeToTallestObject" x="547" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month9}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="54011d36-e185-45f5-bdbd-f6cee92df89d" stretchType="RelativeToTallestObject" x="598" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month10}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="ef671b8b-9856-40ae-ad6c-ea3a5f791641" stretchType="RelativeToTallestObject" x="649" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month11}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="ec03af58-f384-4777-81da-315f006cea31" stretchType="RelativeToTallestObject" x="700" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month12}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(-#,##0)" isBlankWhenNull="false">
+				<reportElement uuid="511cda57-2f3a-41fd-8c2d-422b99ff7894" x="751" y="0" width="51" height="20"/>
+				<box rightPadding="2">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="20" splitType="Stretch"/>
+	</summary>
+</jasperReport>

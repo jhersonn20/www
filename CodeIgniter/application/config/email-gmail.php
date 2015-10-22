@@ -1,0 +1,9 @@
+$config['protocol'] = 'smtp';
+$config['charset'] = 'iso-8859-1';
+$config['wordwrap'] = TRUE;
+$config['smtp_host'] = "ssl://smtp.googlemail.com";
+$config['smtp_user'] = "romelgomez11@gmail.com";
+$config['smtp_pass'] = "xxx";
+$config['smtp_port'] = "465";
+$config['mailtype'] = "html";
+$config['validate'] = true;

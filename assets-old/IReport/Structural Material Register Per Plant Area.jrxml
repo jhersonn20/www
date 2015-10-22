@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Structural Material Register Per Priority" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cPlants" class="java.lang.String">
+		<defaultValueExpression><![CDATA["1240B,1240G"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cAreas" class="java.lang.String">
+		<defaultValueExpression><![CDATA["032"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="iOption" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[2]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fiAsofDt" class="java.lang.String">
+		<defaultValueExpression><![CDATA["2015-03-04"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[{call dbo.smrppa_sp($P{cPlants},$P{cAreas},$P{iOption})}]]>
+	</queryString>
+	<field name="cPRIOR_NO" class="java.lang.String"/>
+	<field name="cPLANT_NO" class="java.lang.String"/>
+	<field name="cAREA_NO" class="java.lang.String"/>
+	<field name="cAREA_LOC" class="java.lang.String"/>
+	<field name="cDRAWING_NO" class="java.lang.String"/>
+	<field name="cSHT_NO" class="java.lang.String"/>
+	<field name="cREV_NO" class="java.lang.String"/>
+	<field name="cPC_MARK" class="java.lang.String"/>
+	<field name="cPC_DESC" class="java.lang.String"/>
+	<field name="cLOCATION" class="java.lang.String"/>
+	<field name="cELEVATION" class="java.lang.String"/>
+	<field name="nQTY" class="java.math.BigDecimal"/>
+	<field name="nLENGTH" class="java.math.BigDecimal"/>
+	<field name="nWT" class="java.math.BigDecimal"/>
+	<field name="cUM" class="java.lang.String"/>
+	<field name="cDATE_REQ" class="java.lang.String"/>
+	<field name="nWT1" class="java.math.BigDecimal"/>
+	<field name="cDATE_REC" class="java.lang.String"/>
+	<field name="nWT2" class="java.math.BigDecimal"/>
+	<field name="cISSUED" class="java.lang.String"/>
+	<field name="nWT3" class="java.math.BigDecimal"/>
+	<field name="dAS_OF" class="java.lang.String"/>
+	<field name="cTITLE1" class="java.lang.String"/>
+	<field name="cPREPBY" class="java.lang.String"/>
+	<field name="cPREPPOS" class="java.lang.String"/>
+	<field name="cROC_CODE" class="java.lang.String"/>
+	<field name="cSEQ_NO" class="java.lang.String"/>
+	<field name="cTitle2" class="java.lang.String"/>
+	<field name="cJMIF_NO" class="java.lang.String"/>
+	<variable name="SQTY" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nQTY}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SLENGTH" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nLENGTH}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SWEIGHT" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SWEIGHT1" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT1}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SWEIGHT2" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT2}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="SWEIGHT3" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA LOC" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT3}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="GTQTY" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nQTY}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GTLENGTH" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nLENGTH}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GTWEIGHT" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GTWEIGHT1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT1}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GTWEIGHT2" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT2}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="GTWEIGHT3" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT3}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="TQTY" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nQTY}]]></variableExpression>
+	</variable>
+	<variable name="TLENGTH" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nLENGTH}]]></variableExpression>
+	</variable>
+	<variable name="TWEIGHT" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT}]]></variableExpression>
+	</variable>
+	<variable name="TWEIGHT1" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT1}]]></variableExpression>
+	</variable>
+	<variable name="TWEIGHT2" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT2}]]></variableExpression>
+	</variable>
+	<variable name="TWEIGHT3" class="java.math.BigDecimal" resetType="Group" resetGroup="AREA_NO" calculation="Sum">
+		<variableExpression><![CDATA[$F{nWT3}]]></variableExpression>
+	</variable>
+	<group name="AREA LOC">
+		<groupExpression><![CDATA[$F{cAREA_LOC}]]></groupExpression>
+		<groupFooter>
+			<band height="13">
+				<staticText>
+					<reportElement x="0" y="0" width="354" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<text><![CDATA[SUB TOTAL: ]]></text>
+				</staticText>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="354" y="0" width="32" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SQTY}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="386" y="0" width="36" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SLENGTH}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="422" y="0" width="34" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SWEIGHT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="456" y="0" width="125" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="581" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SWEIGHT1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="626" y="0" width="44" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="715" y="0" width="42" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="670" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SWEIGHT2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="757" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{SWEIGHT3}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="AREA_NO">
+		<groupExpression><![CDATA[$F{cAREA_NO}]]></groupExpression>
+		<groupFooter>
+			<band height="13">
+				<staticText>
+					<reportElement x="0" y="0" width="354" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right">
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+					<text><![CDATA[TOTAL: ]]></text>
+				</staticText>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="354" y="0" width="32" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TQTY}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="422" y="0" width="34" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TWEIGHT}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="386" y="0" width="36" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TLENGTH}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="670" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TWEIGHT2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="757" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TWEIGHT3}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.0000" isBlankWhenNull="true">
+					<reportElement x="581" y="0" width="45" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="5"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{TWEIGHT1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="456" y="0" width="125" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="626" y="0" width="44" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="715" y="0" width="42" height="13"/>
+					<box>
+						<pen lineWidth="1.0"/>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement/>
+					<text><![CDATA[]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="151" splitType="Stretch">
+			<image>
+				<reportElement x="3" y="1" width="103" height="38"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arrc-logo.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="680" y="26" width="120" height="14"/>
+				<imageExpression class="java.lang.String"><![CDATA["D:\\ireports\\images\\arcc-arabic.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="110" y="26" width="174" height="14" forecolor="#3333FF"/>
+				<textElement>
+					<font fontName="Century Gothic" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL RUSHAID CONSTRUCTION CO., LTD.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="80" width="802" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cTITLE1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="100" width="802" height="13"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="9" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA['As of '+new SimpleDateFormat("MM/dd/yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($P{fiAsofDt}.replace( '"', '' )))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="117" width="646" height="14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cTitle2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="134" width="26" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIORITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="26" y="134" width="25" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PLANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="51" y="134" width="28" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AREA NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="79" y="134" width="30" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AREA LOC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="109" y="134" width="52" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DRAWING NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="161" y="134" width="24" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SHT NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="134" width="24" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REV NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="209" y="134" width="34" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PC MARK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="243" y="134" width="53" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PC MARK DESC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="296" y="134" width="34" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="330" y="134" width="24" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELEV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="354" y="134" width="32" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="386" y="134" width="36" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LENGTH]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="422" y="134" width="34" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="456" y="134" width="24" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="134" width="58" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JMIF NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="536" y="134" width="45" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQ DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="581" y="134" width="45" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="626" y="134" width="43" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REC DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="669" y="134" width="45" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="714" y="134" width="43" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISS DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="757" y="134" width="45" height="14" backcolor="#C0C0C0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="6" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WEIGHT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="2" y="0" width="24" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPRIOR_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="26" y="0" width="25" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPLANT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="51" y="0" width="28" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAREA_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="79" y="0" width="31" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cAREA_LOC}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="110" y="0" width="51" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDRAWING_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="161" y="0" width="24" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cSHT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="185" y="0" width="24" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cREV_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="209" y="0" width="34" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPC_MARK}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="243" y="0" width="53" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cPC_DESC}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="296" y="0" width="34" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cLOCATION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="330" y="0" width="24" height="11"/>
+				<textElement>
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cELEVATION}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement x="354" y="0" width="32" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nQTY}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement x="386" y="0" width="36" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nLENGTH}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="422" y="0" width="34" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nWT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="456" y="0" width="24" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cUM}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="581" y="0" width="45" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nWT1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="669" y="0" width="45" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nWT2}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="757" y="0" width="45" height="11"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{nWT3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="481" y="0" width="57" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cJMIF_NO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="538" y="0" width="43" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDATE_REQ}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="626" y="0" width="43" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cDATE_REC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="715" y="0" width="42" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cISSUED}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="15" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement x="89" y="2" width="27" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="39" y="2" width="48" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="745" y="2" width="29" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="775" y="2" width="27" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="2" width="38" height="12"/>
+				<textElement>
+					<font fontName="Calibri" size="6"/>
+				</textElement>
+				<text><![CDATA[  Printed date :  ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="354" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Calibri" size="8"/>
+				</textElement>
+				<text><![CDATA[GRAND TOTAL: ]]></text>
+			</staticText>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="354" y="0" width="32" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTQTY}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="386" y="0" width="36" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTLENGTH}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="422" y="0" width="34" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTWEIGHT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="456" y="0" width="125" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="581" y="0" width="45" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTWEIGHT1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="626" y="0" width="44" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="670" y="0" width="45" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTWEIGHT2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="715" y="0" width="42" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="#,##0.0000" isBlankWhenNull="true">
+				<reportElement x="757" y="0" width="45" height="13"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="5"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{GTWEIGHT3}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

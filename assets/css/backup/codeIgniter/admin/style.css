@@ -1,0 +1,369 @@
+/*-------------------------------------------Structure-------------------------------------------*/
+* {
+    font-size: 100%;
+    /*line-height: 1.3em;*/
+    padding: 0;
+    margin: 0;
+}
+body {
+    background: url(../../../images/arccCMS/arccBG.png) #c9dce4 repeat-x;
+    font: 75% Verdana, Tahoma, Arial, Helvetica, sans-serif;
+}
+
+/*-------------------------------------------Default Components-------------------------------------------*/
+ul {
+    list-style-type: none;
+}
+li {
+    line-height: 19px;
+}
+a.likeButt, .viewFooter span, input[type='submit'], input[type='button'], button {
+    position: relative;
+    text-decoration: none;
+    padding: 1px 5px;
+    border: 1px solid #707070;
+    border-radius: 3px;
+    color: #000;
+    background: #D4D4D4;
+    font-family: inherit;
+    font-size: 10pt;
+    height: 21px;
+    cursor: default;
+}
+a.likeButt:hover, .viewFooter span:hover, input[type='submit']:hover, input[type='button']:hover, button:hover {
+    border: 1px solid #3c7fb1;
+    background: #afdef8;
+}
+label {
+    vertical-align: middle;
+}
+div {
+    display: block;
+}
+
+/*-------------------------------------------Named Components-------------------------------------------*/
+#arccHead {
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+    background: url(../../../images/arccCMS/arccFooter.png) repeat-x;
+    border-bottom: #C6C6C6 1px solid;
+}
+#arccHead span {
+    color: #333;
+    padding: 8px 0 0 15px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 10px;
+}
+#arccHead span.app {
+    float: left;
+    font-size: 15px;
+}
+#arccHead span.user {
+    float: right;
+}
+#arccWrapper {    
+    clear: both;
+    padding: 0;
+    margin-left: 15.4%;
+}
+#leftNav {
+    width: 17%;
+    float: left;
+    margin: 5px 5px 5px -17.65%;
+}
+#leftNav div.leftNav {
+    height: auto;
+    border: 1px solid #0990A8;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-bottom: 5px;
+}
+#leftSysPhase select, #leftProjPhase select {
+    width: 95%;
+    margin: 5px 0 5px 5px;
+}
+.leftSetupFooter, .leftSysFooter, .leftUtilFooter, .leftProjFooter {
+    text-align: right;
+    margin: 5px;
+}
+.utilBoxFooter {
+    text-align: right;	
+}
+#leftNav div.leftNav span.title {
+    display: block;
+    background: url(../../../images/arccCMS/arccNavTitle.png) repeat-x;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 13pt;
+    color: #84e3f4;
+    line-height: 21pt;
+}
+span.menuSeparator {
+    display: block;
+    background: transparent url(../../../images/menu-arrows.png) no-repeat scroll left 5px;
+    margin: 0 auto;
+    width: 80%;
+    height: 21px;
+}
+#leftSetupPhase ul, #leftSysPhase ul, #leftPhyPhase ul, #leftUtilPhase ul {
+}
+#leftSetupPhase li, #leftSysPhase li, #leftPhyPhase li, #leftUtilPhase li {
+    padding: 1px 0 1px 5px;
+    margin-top: 4px;
+    cursor: pointer;
+    border: 1px solid #c9dce4;
+    z-index: 0;
+}
+#leftSetupPhase li:first-child, #leftSysPhase li:first-child, #leftPhyPhase li:first-child, #leftUtilPhase li:first-child {
+    margin-top: 0;
+}
+#leftSetupPhase li:hover, #leftSysPhase li:hover, #leftPhyPhase li:hover, #leftUtilPhase li:hover {
+    border: 1px solid #91b4c3;
+    background: #9ebecc;
+}
+#leftSetupPhase li a, #leftSysPhase li a, #leftPhyPhase li a, #leftUtilPhase li a{
+    text-decoration: none;
+    color: #174F69;
+}
+#leftSetupPhase li:hover a, #leftSysPhase li:hover a, #leftPhyPhase li:hover a, #leftUtilPhase li:hover a{
+    color: #ffffff;
+}
+.currLeftNav {
+    border: 1px solid #91b4c3 !important;
+    background: #9ebecc !important; 
+}
+.currLeftNav a {   
+    color: #ffffff !important;    
+}
+#mainContent {
+    width: 100%;
+    height: auto;
+    min-height: 571px;
+    margin: 5px 5px 5px 0;
+    float: left;
+    color: #174F69;
+}
+.boxContainer {
+    width: 19.6%;   
+    float: left;
+    margin: 0 4px 0 0;
+}
+#mainContent div.mainContent {
+    position: relative;
+    border: 1px solid #0990A8;
+    background: #c1d7e0;
+    height: auto;
+    display: table;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#mainContent div.boxContainer div.mainContent {
+	margin-top: 5px;
+}
+#mainContent div.boxContainer div.mainContent:first-child {
+	margin-top: 0;
+}
+.viewPhase li {
+    padding: 3px;
+}
+.mainContent {
+    padding: 5px;
+}
+.refBox, .systemBox, .setupBox, .usersBox, .utilitiesBox {
+    width: 99%;
+    margin: 0 0 5px 0;
+}
+.boxContainer div.mainContent {
+    width: 100%;
+    margin: 0 0 5px 0;
+}
+.navPhase {
+    width: 79.6%;
+    float: left;
+}
+#mainContent div.mainContent span.title {
+    display: block;
+    background: #2da9bf;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    font-size: 11pt;
+    color: #84e3f4;
+    line-height: 15pt;    
+    margin-bottom: 5px;
+}
+#txtSrcView, #selSys {
+    width: 98.3%;
+    margin: 0 0 5px 0;
+}
+#txtLabel, #txtPath {
+    width: 80%; /*76.5*/
+}
+.custViewPhase div, .mainContentB {
+    margin-top: 5px;    
+}
+.viewPhase div.dirPhase{
+    height: 264px;
+    overflow: auto;
+}
+.custViewPhase div label {
+    float: left;
+    clear: both;
+    text-align: right;
+    width: 40px;
+    line-height: 18px;
+    color: #174F69;
+}
+.custViewPhase div input, #leftSysPhase div input, #leftProjPhase div input {
+    margin: 0 0 5px 5px;
+}
+#mainContent div.mainContent div.mainContentF {
+    margin-top: 5px;    
+    background: #2da9bf;
+    height: 30px;
+    padding: 0 5px;
+}
+.viewFooter a, .viewFooter span, .systemBoxFooter a, .utilitiesBoxFooter a {
+    line-height: 30px;
+    margin-right: 5px;
+}
+#mainContent div.mainContent div.mainContentF input[type='button'] {
+    margin-top: 5px;
+    height: 20px;
+    float: right;
+}
+.hideULView, .hideObj {
+    display: none;
+}
+.notif {
+    width: 99.5%;    
+    background: orange;
+    color: #ffffff;
+}
+.hidDiv {
+    display: none;
+}
+
+/*----------Menu----------*/
+.page_nav {
+    margin: 5px 0 5px 0;
+    height: 499px;
+    overflow: auto;
+}
+#sitemap li{
+    padding: 0 0 0 10px;
+    width: 400px;
+}
+#sitemap li ul li{
+    padding: 0 0 0 20px;
+    width: 400px;
+}
+dl {
+    border: 1px solid #9ebecc;
+    background: #adc8d4;
+    position: relative;
+    display: block;
+    margin: 0;
+    min-height: 30px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: move;
+}
+dl:hover {
+    border: 1px solid #91b4c3;
+    background: #9ebecc;
+}
+dl:hover dd, dd:hover {
+    display: block;
+}
+dd {
+    float: left;
+}
+dt {
+    margin-left: 5px;
+    float: left;
+    line-height: 1em;
+}
+.dropzone {
+    height:6px;
+    background-color:#c1d7e0;
+    border-bottom:4px solid #c1d7e0;
+}
+.sm2_title {
+    color: #174F69;
+    line-height: 30px;
+    font-weight: bold;
+}
+.sm2_delete, .sm2_edit, .sm2_pub, .sm2_workFlow {
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-indent: -5000px;
+    cursor: pointer;
+}
+.sm2_actions {
+    display: none;
+    margin: 0;
+    padding: 8px 2px 0 5px;
+}
+.sm2_delete, .sm2_edit {
+    float: left;
+}
+.sm2_status {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+}
+.sm2_pub, .sm2_workFlow {
+    float: right;
+}
+.sm2_delete {
+    background: url(../../../images/sm2_delete.png);
+}
+.sm2_edit {
+    background: url(../../../images/sm2_edit.png);
+}
+.sm2_pub {
+    background: url(../../../images/sm2_unpub.png);
+}
+.sm2_workFlow {
+    display: none;
+    background: url(../../../images/sm2_draft.png);
+}
+
+#menuDtls {
+    width: auto;
+    height: auto;
+    background: #2da9bf;
+    padding: 3px 0 3px 3px;
+    display: none;
+    margin-top: 30px;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+#menuDtls label {
+    color: #84e3f4;
+    font-style: italic;
+    width: 50px;
+    text-align: right;
+	display: inline-block;
+	margin: 0 5px 10px 0;
+}
+#arccFooter {
+    background: url(../../../images/arccCMS/arccFooter.png) repeat-x;
+    width: 100%;
+    height: 50px;
+    line-height: 48px;
+    font-weight: bold;
+    text-align: center;
+    clear: both;
+}
+/*----------Classes----------*/

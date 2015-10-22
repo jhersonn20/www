@@ -1,0 +1,45 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {	
+	font-family: 'Open Sans Condensed','Arial Narrow', serif;
+	background: #ddd url(/assets/images/bgnoise_lg.png) repeat top left;
+	width: 100%;
+	height: 100%;
+	font-weight: 400;
+	font-size: 15px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+}
+ul {
+	list-style-type: none;
+}
+#header {
+	width: 100%;
+	height: 55px;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+	margin: 5px 0;
+}
+#mainMenu {
+	width: 99%;
+	height: 250px;
+	margin: 0 auto 30px auto;
+	display: block;
+}
+#mainMenu:last-child {
+	margin-bottom: 0;
+}
+#mainMenu li {
+	float: left;
+	width: 8.8%;
+	height: 250px;
+	margin-right: 4px;
+	background: green;
+}
+#mainMenu li:last-child {
+	margin-right: 0;
+}

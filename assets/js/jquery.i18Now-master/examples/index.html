@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<html>
+<head>
+    <script src="../jquery.1.7.2.min.js"></script>
+    <script src="../jquery.i18Now.1.4.0.js"></script>
+    <script src="script.js"></script>
+    <title>Examples</title>
+</head>
+<body>
+    <h1>jquery.i18Now examples</h1>
+    <h2>Static date and time</h2>
+    <span id="date-usa-static"></span>
+    <h2>Updated date and time</h2>
+    <span id="date-usa-updated"></span>
+    <h2>Different date format</h2>
+    <span id="date-usa-long"></span> <span>(long format)</span><br />
+    <span id="date-usa-medium"></span> <span>(medium format)</span><br />
+    <span id="date-usa-short"></span> <span>(short format)</span><br />
+    <span id="date-custom6"></span> <span>(mysql format)</span><br />
+    <span id="date-custom7"></span> <span>(mysql format +)</span>      
+    <h2>Translated date and time</h2>
+    <span id="date-ita"></span> <span>(Italian)</span><br />
+    <span id="date-jpn"></span> <span>(Japanese)</span><br />
+    <span id="date-rus"></span> <span>(Russian)</span><br />
+    <span id="date-zho"></span> <span>(Chinese)</span><br />
+    <span id="date-spa"></span> <span>(Spanish)</span>
+    <h2>Custom date formats</h2>
+    <span id="date-custom1"></span><br />
+    <span id="date-custom2"></span>
+
+    <h2>Timezones changes</h2>
+    <p><em>Note that chrome may cache your current machine locale timezone, so if you change params you may have to reopen this page in a new tab</em></p>
+    <strong>Locale +6Hrs: </strong><span id="date-custom3"></span><br />
+    <strong>Locale unaware:  </strong><span id="date-custom4"></span><br />
+    <strong>Locale unaware with timezone "+0445": </strong><span id="date-custom5"></span> <span>(Useful when you pass GMT/UTC time and a timezone offset)</span>
+</body>
+</html>

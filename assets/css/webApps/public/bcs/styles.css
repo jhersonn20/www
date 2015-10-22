@@ -1,0 +1,42 @@
+.k-content {
+	margin: 0 auto;
+}
+.k-tabstrip .k-content {
+	margin-right: .3em;
+	margin-left: .3em;
+	min-height: 302px;
+}
+.k-content div.wrap-grid {
+	margin: 0 16px 3px 0 !important;
+	display: inline-block;
+}
+.k-content div:last-child{
+	margin: 0 !important;
+}
+#spool_dtl, #joints_dtl, #random_dtl, #material_dtl {
+	margin-top: 5px;
+	display: block;
+}
+/*#random_dtl {
+	line-height: 19px;
+	vertical-align: middle;
+}*//*, #random_dtl fieldset*/
+/*#spool_dtl fieldset, #joints_dtl fieldset  { 
+	display: inline-block;
+	width: 287px;
+}
+#spool_dtl label, #joints_dtl label {
+	line-height: 15px;
+	vertical-align: middle;
+}
+#spool_dtl input {
+	vertical-align: middle;
+}*/
+.demo-section {
+	background: url('/assets/images/webapps/bcs_bg_blur_1.jpg') no-repeat fixed center top #222;
+	background-size: 100% 100%;
+}
+.apply8 {
+	background: url('/assets/images/webapps/bcs_bg_blur_8.jpg') no-repeat fixed center top #222;
+	background-size: 100% 100%;
+}

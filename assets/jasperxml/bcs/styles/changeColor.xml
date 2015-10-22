@@ -1,0 +1,10 @@
+<style name="style_severidad">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($F{billing_sub_ctr} < 0)]]></conditionExpression>
+            <style mode="Opaque" forecolor="#003366"/>
+        </conditionalStyle>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[($F{billing_sub_ctr} > 0)]]></conditionExpression>
+            <style mode="Opaque" forecolor="#990000"/>
+        </conditionalStyle>
+    </style>

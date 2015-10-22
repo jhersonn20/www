@@ -1,0 +1,284 @@
+/*-------------------------------------------Structure-------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    /*line-height: 1.3em;*/
+}
+html {
+	background-color: #e2e2e2;
+	background-image: none;
+}
+body {
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+/*    font:75% 'Lucida Sans Unicode','Lucida Grande',arial,helvetica,sans-serif;*/
+	font-family: 'Verdana','Open Sans Condensed','Arial Narrow', serif;
+	font-weight: 400;
+	font-size: 12px;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+/*font-family: "Lucida Grande",Verdana,Arial,"Bitstream Vera Sans",sans-serif !important;*/
+/*	background: url("/assets/images/webapps/patternC.png") repeat-x;*/
+}
+
+/*-------------------------------------------Default Components-------------------------------------------*/
+ul {
+    list-style-type: none;
+}
+li {
+    line-height: 19px;
+}
+fieldset {
+	padding: 5px;
+}
+legend {
+	padding: 0 5px;
+	font-weight: bold;
+}
+textarea {
+	padding: 5px;
+}
+
+/*-------------------------------------------Header-------------------------------------------*/
+#arccHead {
+	margin: 0 auto;
+	width: 74.35%;
+	height: 125px;
+}
+#arccHead a, input[type='submit'] {
+	padding: 0 0 0 4px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0e5fc2;
+	text-decoration: none;
+}
+#arccHead span {
+    color: #333;
+    padding: 8px 0 0 15px;
+    line-height: 40px;
+    margin: 0;
+    padding: 0 10px;
+}
+#arccHead span.app {
+    float: left;
+    font-size: 15px;
+}
+#arccHead span.user, .header-right {
+    float: right;
+}
+.header-left {
+	width: 100%;
+	height: 100px;
+	float: left;
+	background: url('/assets/images/webapps/indexHeader.png') no-repeat;
+}
+#pUL li{
+	position: relative;
+	margin-bottom: 5px;
+}
+#pUL li:last-child{
+	margin-bottom: 0;
+}
+#pUL li span {
+	display: inline-block;
+}
+#pUL li img {
+	margin-right: 5px;
+}
+#pUL li img, #pUl li span{
+	vertical-align: middle;
+}
+.thisIsRequired {
+	border: 1px solid #E15613;
+}
+/*-------------------------------------------System-------------------------------------------*/
+#main-wrapper {
+	margin: 0 auto 0 auto;
+	width: 74.35%;
+}
+.wrap-system {
+	display: inline-block;
+	margin: 5px auto;
+}
+#tabstrip {
+	margin-top: 10px;
+}
+.wrap-system ul {
+	display:table;
+}
+.wrap-system ul li {
+	display:table-cell;
+}
+.system-proper {
+	margin: 0; /*5px 10px 5px;*/
+	width: 190px;
+/*	height: 148px;*/
+	float: left;
+}
+.system-proper img {
+	margin: 0 auto;
+	width: 156px;
+	display: block;
+}
+.system-proper a, .system-proper p {
+/*	padding: 0 0 0 4px;*/
+	margin: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0e5fc2;
+}
+.system-proper a {
+	text-decoration: none;
+}
+.system-proper p {
+	font-size: 11px;
+	font-weight: normal;
+}
+
+/*-------------------------------------------Login-------------------------------------------*/
+.login-header {
+	margin: 0 auto;
+	width: 664px;
+	height: 96px;
+	background: url('/assets/images/webapps/loginHeader.png') no-repeat;
+}
+.login-form {
+	margin: 0 auto;
+	width: 326px;
+	height: 254px;
+	background: url('/assets/images/webapps/loginBox.png') no-repeat;
+}
+.login-form ul {
+	padding: 40px 0 0 0 !important;
+	width: 248px;
+	margin: 0 auto 0 auto;
+	list-style-type: none;
+}
+.login-form ul li {
+	margin-bottom: 10px;
+}
+.login-form ul li:last-child {
+	margin-bottom: 0;
+}
+.login-form ul li label.title {
+	text-align: right;
+	margin-right: 5px;
+	display: inline-block;
+}
+.login-form ul li input {
+	font-size: 20px;
+}
+.wrap-legend {
+	text-align: right;
+	display: none;
+	/*background: #ff7f01 !important;
+	background-image: none,-webkit-linear-gradient(top,#FE761B 0,#E15613 100%) !important;
+	color: #ffffff;*/
+}
+.wrap-legend p{
+	font-style: italic;
+	font-size: 10px;
+}
+
+/*-------------------------------------------Footer-------------------------------------------*/
+#footer {
+	position:absolute;
+	bottom:0;
+	width: 100%;
+	height: 88px;
+}
+.footer-content {
+	margin: 0 auto;
+	width: 74.35%;
+	height: 88px;
+	background: url("/assets/images/webapps/footer.png") no-repeat;
+}
+.footer-left {
+	font-family: 'Berlin Sans FB';
+	font-size: 12px;
+	float: left;
+	text-align: left;
+	color: #0e5fc2;
+}
+.footer-left p {
+	padding: 0;
+	margin: 0;
+}
+.footer-left p:first-child {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+/*-------------------------------------------Window-------------------------------------------*/
+#window ul li label.title, .k-window ul li label.title {
+	width: 28%;
+	text-align: right;
+	margin-right: 5px;
+	display: inline-block;
+}
+#window ul li, .k-window ul li {
+	margin-bottom: 5px;
+}
+.buttonRight {
+	text-align: right;
+	height: 25px;
+}
+
+/*-------------------------------------------Kendo-------------------------------------------*/
+.demo-section {
+	padding: 5px;
+	margin-bottom: 5px !important;
+    background: #D9D9D9;
+}
+.k-window .demo-section {
+	background: none !important;
+}
+.k-grid-header {
+	padding-right: 0 !important;
+}
+.k-grid-content {
+	overflow-y: hidden !important;
+}
+.k-grid tbody tr{
+    height: 27px;
+}			 
+.k-grid td{
+    white-space: nowrap;
+}
+.k-textbox {
+	width: 100%;
+}
+.k-state-active {
+	border-color: #abadb3 !important;
+	background-color: #e2e2e2 !important;
+	/*background-color: #cbcbcb !important;
+	background: none !important;
+	background-color: #cbcbcb !important;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.01) 0%,rgba(0, 0, 0, 0.07) 100%) !important;*/
+}
+.login.k-content {
+	background: #e2e2e2 url("/assets/images/webApps/const.png") no-repeat fixed 45% 280px;
+}
+.login.k-state-active:hover {
+	background: #e2e2e2 url("/assets/images/webApps/const.png") no-repeat fixed 45% 280px !important;
+}
+.login.k-tabstrip {
+	border-style: none;
+	background-image: none;
+}
+.login.k-content {
+	min-height: 430px;
+}
+.gridTitle {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #C5C5C5;
+	padding: 5px 0;
+	font-size: 12px;
+	font-weight: bold;
+}
